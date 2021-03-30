@@ -13,11 +13,33 @@
 	</head>
 
 	<body>
+        
+<h1 id="days">###</h1>
 
-<center><h1 style="font-weight: bold; font-size: 60px;">###</h1>
-<h2>Days until Chirstmas</h2></center><br> <br><br>
+<h2>Days until Chirstmas</h2>
+
+<br> <br><br>
 
 <center><img src="./xmastree.png" alt="Christmas Tree"></center>
+
+<script>
+    function countdown(){
+var today = new  Date();
+var day = String(today.getDate()).padStart(2, "0");
+var month = String(today.getMonth() +1).padStart(2, "0");
+var year =today.getFullYear();
+today = month + "/" + day + "/" + year;
+var currentDay = new Date(today);
+var eventDay = new Date('12/25/' + new Date().getFullYear())
+const diffTime = Math.floor(eventDay - currentDay);
+var diffDays = diffTime / (1000 * 3600 * 24);
+console.log(diffTime +  "ms");
+console.log(diffDays + "days");
+
+document.getElementById("days").innerHTML = diffDays
+}
+countdown();
+</script>
 
 
 	</body>
